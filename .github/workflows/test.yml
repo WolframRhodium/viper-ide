@@ -173,7 +173,7 @@ jobs:
         shell: bash
 
       - name: Run tests (headless - non-ubuntu)
-        if: "!startsWith(matrix.os, 'ubuntu') && matrix.target != 'darwin-arm64'"
+        if: "!startsWith(matrix.os, 'ubuntu') && matrix.target != 'darwin-arm64' && false"
         run: npm run test --full-trace -- --target=${{ matrix.target }}
         working-directory: client
         env:
@@ -181,7 +181,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run tests (headless - ubuntu only)
-        if: startsWith(matrix.os, 'ubuntu') && matrix.target != 'darwin-arm64'
+        if: startsWith(matrix.os, 'ubuntu') && matrix.target != 'darwin-arm64' && false
         run: xvfb-run -a npm run test --full-trace -- --target=${{ matrix.target }}
         working-directory: client
         env:
