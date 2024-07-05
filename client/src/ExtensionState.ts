@@ -48,7 +48,7 @@ export class State {
 
     public static unitTest: UnitTestCallback;
 
-    public static autoVerify = true;
+    public static autoVerify = false;
 
     //status bar
     public static statusBarItem: StatusBar;
