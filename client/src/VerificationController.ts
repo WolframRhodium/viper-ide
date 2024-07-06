@@ -723,9 +723,9 @@ export class VerificationController {
                                 msg = `Successfully verified ${params.filename} in ${Helper.formatSeconds(params.time)} ${warningsMsg("with")}`;
                                 Log.log(msg, LogLevel.Default);
                                 State.statusBarItem.update("$(check) " + msg, nofWarnings == 0 ? Color.SUCCESS : Color.WARNING);
-                                if (params.manuallyTriggered > 0) {
-                                    Log.hint(msg);
-                                }
+                                // if (params.manuallyTriggered > 0) {
+                                //     Log.hint(msg);
+                                // }
                                 break;
                             case Success.ParsingFailed:
                                 msg = `Parsing ${params.filename} failed after ${Helper.formatSeconds(params.time)} ${warningsMsg("with")}`;
